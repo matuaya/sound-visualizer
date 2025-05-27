@@ -1,0 +1,26 @@
+{
+  "name": "sound-visualizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "fix": "prettier --write . && eslint --fix .",
+    "lint": "prettier --check . && eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matuaya/sound-visualizer.git"
+  },
+  "author": "Matuaya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matuaya/sound-visualizer/issues"
+  },
+  "homepage": "https://github.com/matuaya/sound-visualizer#readme",
+  "devDependencies": {
+    "eslint": "^9.27.0",
+    "eslint-config-prettier": "^10.1.5",
+    "prettier": "3.5.3"
+  }
+}
