@@ -25,6 +25,7 @@
     "prettier": "3.5.3"
   },
   "dependencies": {
-    "@picovoice/pvrecorder-node": "^1.2.8"
+    "@picovoice/pvrecorder-node": "^1.2.8",
+    "enquirer": "^2.4.1"
   }
 }
