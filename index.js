@@ -32,4 +32,15 @@ async function main() {
   await playVisualizer(calibrationSamples);
 }
 
-main();
+main().catch((error) => {
+  if (
+    error &&
+    error.message === "PvRecorder failed to read audio data frame."
+  ) {
+    console.error("Exiting...");
+  } else if (error === "") {
+    console.error("Prompt cancelled");
+  } else {
+    throw error;
+  }
+});

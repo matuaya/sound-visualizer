@@ -1,5 +1,6 @@
 import readline from "readline";
 import { recorder } from "./recorder.js";
+import { isInterrupted } from "./exit-handler.js";
 
 const MAXIMUM_BAR_HEIGHT = 15;
 
@@ -8,9 +9,8 @@ export async function playVisualizer(calibrationSamples) {
   const terminalHeight = process.stdout.rows;
   let yPosition = process.stdout.rows - 3;
   let xPosition = 0;
-  let isInterrupted = { status: false };
 
-  setupVisualizer(isInterrupted);
+  setupVisualizer();
   recorder.start();
 
   while (!isInterrupted.status) {
@@ -59,21 +59,11 @@ function drawBar(xPosition, yPosition, barHeight) {
   }
 }
 
-function setupVisualizer(isInterrupted) {
+function setupVisualizer() {
   console.clear();
   hideCursor();
-
-  process.on("SIGINT", () => {
-    isInterrupted.status = true;
-    console.log("Visualizer stopped. Exiting...");
-    showCursor();
-  });
 }
 
 function hideCursor() {
   process.stdout.write("\u001B[?25l");
-}
-
-function showCursor() {
-  process.stdout.write("\u001B[?25h");
 }

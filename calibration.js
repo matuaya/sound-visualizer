@@ -1,4 +1,5 @@
 import { selectPrompt } from "./prompt.js";
+import { isInterrupted } from "./exit-handler.js";
 import { recorder } from "./recorder.js";
 import { calculateRMS } from "./visualizer.js";
 
@@ -54,10 +55,15 @@ async function collectFrames() {
 
   const frames = [];
   for (let i = 0; i <= SAMPLE_FRAMES; i++) {
+    if (isInterrupted.status) {
+      recorder.stop();
+    }
+
     const frame = await recorder.read();
     const rms = calculateRMS(frame);
     frames.push(rms);
   }
+
   recorder.stop();
 
   return frames;
