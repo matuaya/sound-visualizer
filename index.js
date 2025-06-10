@@ -1,10 +1,16 @@
 import { selectPrompt } from "./prompt.js";
 import { playVisualizer } from "./visualizer.js";
 import { runCalibration } from "./calibration.js";
+import { PvRecorder } from "@picovoice/pvrecorder-node";
 
 const DEFAULT_SAMPLE = [3, 4000];
 
 async function main() {
+  const availableMicrophone = PvRecorder.getAvailableDevices();
+  if (availableMicrophone[0] === "NULL Capture Device") {
+    return;
+  }
+
   console.clear();
 
   const select = await selectPrompt(
