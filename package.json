@@ -1,9 +1,12 @@
 {
-  "name": "sound-visualizer",
+  "name": "terminal-visualizer-ish",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
+  "description": "Terminal audio visualizer that listens to your mic and shows volume as bars.",
   "main": "index.js",
+  "bin": {
+    "terminal-visualizer-ish": "./index.js"
+  },
   "scripts": {
     "fix": "prettier --write . && eslint --fix .",
     "lint": "prettier --check . && eslint .",
@@ -11,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matuaya/sound-visualizer.git"
+    "url": "git+https://github.com/matuaya/terminal-visualizer-ish.git"
   },
   "author": "Matuaya",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/matuaya/sound-visualizer/issues"
+    "url": "https://github.com/matuaya/terminal-visualizer-ish/issues"
   },
-  "homepage": "https://github.com/matuaya/sound-visualizer#readme",
+  "homepage": "https://github.com/matuaya/terminal-visualizer-ish#readme",
   "devDependencies": {
     "eslint": "^9.27.0",
     "eslint-config-prettier": "^10.1.5",
