@@ -27,15 +27,15 @@ async function main() {
 
   console.clear();
 
-  let calibrationSamples = await runCalibration();
+  let volumeSamples = await runCalibration();
 
-  const lowest = calibrationSamples[0];
-  const highest = calibrationSamples[1];
+  const lowest = volumeSamples[0];
+  const highest = volumeSamples[1];
   if (lowest > highest || highest - lowest < 800) {
-    calibrationSamples = DEFAULT_SAMPLE;
+    volumeSamples = DEFAULT_SAMPLE;
   }
 
-  await playVisualizer(calibrationSamples);
+  await playVisualizer(volumeSamples);
 }
 
 main().catch((error) => {

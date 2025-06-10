@@ -6,12 +6,12 @@ import { calculateRMS } from "./visualizer.js";
 const SAMPLE_FRAMES = 90;
 
 export async function runCalibration() {
-  let calibrationSamples = [];
+  let volumeSamples = [];
   const lowSample = await getSample(
     "To collect low-volume samples, press 'Start Sampling' and stay quiet for a few seconds.",
     "low"
   );
-  calibrationSamples.push(lowSample);
+  volumeSamples.push(lowSample);
 
   console.clear();
 
@@ -19,9 +19,9 @@ export async function runCalibration() {
     "To collect high-volume samples, press 'Start Sampling' and speak louder than normal for a few seconds.",
     "high"
   );
-  calibrationSamples.push(highSample);
+  volumeSamples.push(highSample);
 
-  return calibrationSamples;
+  return volumeSamples;
 }
 
 async function getSample(instructionMessage, sampleType) {
