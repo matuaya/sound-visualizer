@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { PvRecorder } from "@picovoice/pvrecorder-node";
 import { selectPrompt } from "./prompt.js";
 import { playVisualizer } from "./visualizer.js";
