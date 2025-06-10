@@ -8,6 +8,8 @@ const DEFAULT_SAMPLE = [200, 3000];
 async function main() {
   const availableMicrophones = PvRecorder.getAvailableDevices();
   if (availableMicrophones[0] === "NULL Capture Device") {
+    console.log("Sorry, microphone was not detected.");
+
     return;
   }
 
