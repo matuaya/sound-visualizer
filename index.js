@@ -3,7 +3,7 @@ import { selectPrompt } from "./prompt.js";
 import { playVisualizer } from "./visualizer.js";
 import { runCalibration } from "./calibration.js";
 
-const DEFAULT_SAMPLE = [3, 4000];
+const DEFAULT_SAMPLE = [200, 3000];
 
 async function main() {
   const availableMicrophones = PvRecorder.getAvailableDevices();
@@ -31,7 +31,7 @@ async function main() {
 
   const lowest = calibrationSamples[0];
   const highest = calibrationSamples[1];
-  if (lowest > highest || highest - lowest < 300) {
+  if (lowest > highest || highest - lowest < 800) {
     calibrationSamples = DEFAULT_SAMPLE;
   }
 
