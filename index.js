@@ -18,7 +18,7 @@ async function main() {
   console.clear();
 
   const select = await selectPrompt(
-    "Choose 'Sound Calibration' for better visualizer accuracy, or 'Skip' to use default settings.",
+    "Choose 'Sound Calibration' to set up the visualizer for your mic, or 'Skip' to just start!",
     [
       { name: "Sound Calibration", value: "calibrate" },
       { name: "Skip (Use Defaults)", value: "skip" },
