@@ -4,7 +4,7 @@ export let isInterrupted = { status: false };
 
 process.on("SIGINT", () => {
   console.log();
-  isInterrupted = true;
+  isInterrupted.status = true;
   recorder.release();
   showCursor();
   return;
