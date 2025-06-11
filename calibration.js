@@ -9,7 +9,7 @@ export async function runCalibration() {
   let volumeSamples = [];
   const lowSample = await getSample(
     "To collect low-volume samples, press 'Start Sampling' and stay quiet for a few seconds.",
-    "low"
+    "low",
   );
   volumeSamples.push(lowSample);
 
@@ -17,7 +17,7 @@ export async function runCalibration() {
 
   const highSample = await getSample(
     "To collect high-volume samples, press 'Start Sampling' and speak louder than normal for a few seconds.",
-    "high"
+    "high",
   );
   volumeSamples.push(highSample);
 

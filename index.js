@@ -22,7 +22,7 @@ async function main() {
     [
       { name: "Sound Calibration", value: "calibrate" },
       { name: "Skip (Use Defaults)", value: "skip" },
-    ]
+    ],
   ).run();
 
   if (select === "skip") {
